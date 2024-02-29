@@ -8,11 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Concrete\" />
-    <Folder Include="UnitofWork\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Blogy.EntityLayer\Blogy.EntityLayer.csproj" />
+    <Folder Include="Abstract\" />
+    <Folder Include="Container\" />
+    <Folder Include="ErrorMessages\" />
+    <Folder Include="Logging\" />
+    <Folder Include="ValidationRules\" />
   </ItemGroup>
 
 </Project>
