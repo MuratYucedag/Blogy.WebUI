@@ -27,6 +27,12 @@ namespace Blogy.BusinessLayer.Concrete
                 //hata mesajı
             }
         }
+
+        public List<Article> TGetArticleWithWriter()
+        {
+           return _articleDal.GetArticleWithWriter();
+        }
+
         public Article TGetById(int id)
         {
            //eğer id değerine göre yetkisi varsa
