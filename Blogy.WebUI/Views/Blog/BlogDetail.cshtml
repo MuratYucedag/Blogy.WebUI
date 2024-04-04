@@ -32,7 +32,7 @@
                         </form>
                     </div>
 
-                    @await Component.InvokeAsync("_BlogDetailByWriterInfoComponentPartial")
+                    @await Component.InvokeAsync("_BlogDetailByWriterInfoComponentPartial",new {id=ViewBag.i})
 
                     @await Component.InvokeAsync("_BlogDetailGetOtherBlogPostByWriterComponentPartial")
 
