@@ -11,5 +11,6 @@ namespace Blogy.DataAccessLayer.Abstract
     {
         List<Article> GetArticleWithWriter();
         Writer GetWriterInfoByArticleWriter(int id);
+        List<Article> GetArticlesByWriter(int id);
     }
 }
