@@ -1,4 +1,4 @@
-﻿@model List<Blogy.EntityLayer.Concrete.AppUser>
+﻿@model List<Blogy.EntityLayer.Concrete.Article>
 @{
     ViewData["Title"] = "MyBlogList";
     Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
@@ -36,48 +36,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>53275531</td>
-                                    <td>12 May 2017</td>
-                                    <td>
-                                        <label class="badge badge-danger">Pending</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Messsy</td>
-                                    <td>53275532</td>
-                                    <td>15 May 2017</td>
-                                    <td>
-                                        <label class="badge badge-warning">In progress</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>John</td>
-                                    <td>53275533</td>
-                                    <td>14 May 2017</td>
-                                    <td>
-                                        <label class="badge badge-info">Fixed</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Peter</td>
-                                    <td>53275534</td>
-                                    <td>16 May 2017</td>
-                                    <td>
-                                        <label class="badge badge-success">Completed</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Dave</td>
-                                    <td>53275535</td>
-                                    <td>20 May 2017</td>
-                                    <td>
-                                        <label class="badge badge-warning">In progress</label>
-                                    </td>
-                                </tr>
+                                @foreach(var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ArticleId</td>
+                                        <td>@item.Title</td>
+                                        <td>@item.CreatedDate</td>
+                                        <td>@item.CategoryId</td>
+                                        <td><a href="#" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="#" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="#" class="btn btn-warning">Yorumlar</a></td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
+                        <a href="#" class="btn btn-primary">Yeni Blog Girişi</a>
                     </div>
                 </div>
             </div>
