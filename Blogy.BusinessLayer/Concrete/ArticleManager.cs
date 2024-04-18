@@ -56,25 +56,11 @@ namespace Blogy.BusinessLayer.Concrete
 
         public void TInsert(Article entity)
         {
-            if(entity.Title!=null && entity.Description.Length>50 && entity.CategoryId >= 0)
-            {
-                _articleDal.Insert(entity);
-            }
-            else
-            {
-                //hata mesajı
-            }
+            _articleDal.Insert(entity);
         }
         public void TUpdate(Article entity)
         {
-            if (entity.Title != null && entity.Description.Length > 50 && entity.CategoryId >= 0)
-            {
-                _articleDal.Update(entity);
-            }
-            else
-            {
-                //hata mesajı
-            }
+            _articleDal.Update(entity);
         }
     }
 }
