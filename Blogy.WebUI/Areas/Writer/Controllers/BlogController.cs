@@ -19,9 +19,11 @@ namespace Blogy.WebUI.Areas.Writer.Controllers
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
 
-            ViewBag.id = user.Id + " " + user.Name + " " + user.Surname;
+            //ViewBag.id = user.Id + " " + user.Name + " " + user.Surname;
 
-            return View();
+            var values = _articleService.TGetArticlesByWriter(user.Id);
+
+            return View(values);
         }
     }
 }
