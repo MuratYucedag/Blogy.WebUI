@@ -28,6 +28,8 @@ namespace Blogy.WebUI.Areas.Writer.Controllers
 
             return View(values);
         }
+
+        [HttpGet]
         public IActionResult CreateBlog()
         {
             List<SelectListItem> values = (from x in _categoryService.TGetListAll()
@@ -38,6 +40,17 @@ namespace Blogy.WebUI.Areas.Writer.Controllers
                                            }).ToList();
             ViewBag.v = values;
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateBlog(Article article)
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            article.AppUserId = user.Id;
+            article.WriterId = 1;
+            article.CreatedDate= DateTime.Now;
+            _articleService.TInsert(article);
+            return RedirectToAction("MyBlogList");
         }
     }
 }
